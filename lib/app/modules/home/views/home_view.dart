@@ -32,97 +32,103 @@ class HomeView extends GetView<HomeController> {
   Widget _menu(context) {
     return Container(
       color: Color(0Xff181c1b),
-      child: Padding(
-        padding: const EdgeInsets.only(right: 16.0),
-        child: Align(
-          alignment: Alignment.centerRight,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Quem somos",
-                  style: GoogleFonts.montserrat(
-                      textStyle:
-                          const TextStyle(color: Colors.white, fontSize: 18)),
+      child: GestureDetector(
+        onVerticalDragEnd: (DragEndDetails oi) {
+          controller.menuclick.value = !controller.menuclick.value;
+          print(DragUpdateDetails);
+        },
+        child: Padding(
+          padding: const EdgeInsets.only(right: 16.0),
+          child: Align(
+            alignment: Alignment.centerRight,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Quem somos",
+                    style: GoogleFonts.montserrat(
+                        textStyle:
+                            const TextStyle(color: Colors.white, fontSize: 18)),
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Consiguinado Privado",
-                  style: GoogleFonts.montserrat(
-                      textStyle:
-                          const TextStyle(color: Colors.white, fontSize: 18)),
+                SizedBox(
+                  height: 50,
                 ),
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Para você",
-                  style: GoogleFonts.montserrat(
-                      textStyle:
-                          const TextStyle(color: Colors.white, fontSize: 18)),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Consiguinado Privado",
+                    style: GoogleFonts.montserrat(
+                        textStyle:
+                            const TextStyle(color: Colors.white, fontSize: 18)),
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Para empresa",
-                  style: GoogleFonts.montserrat(
-                      textStyle:
-                          const TextStyle(color: Colors.white, fontSize: 18)),
+                SizedBox(
+                  height: 50,
                 ),
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Blog",
-                  style: GoogleFonts.montserrat(
-                      textStyle:
-                          const TextStyle(color: Colors.white, fontSize: 18)),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Para você",
+                    style: GoogleFonts.montserrat(
+                        textStyle:
+                            const TextStyle(color: Colors.white, fontSize: 18)),
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Ajuda",
-                  style: GoogleFonts.montserrat(
-                      textStyle:
-                          const TextStyle(color: Colors.white, fontSize: 18)),
+                SizedBox(
+                  height: 50,
                 ),
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Quem ajuda",
-                  style: GoogleFonts.montserrat(
-                      textStyle:
-                          const TextStyle(color: Colors.white, fontSize: 18)),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Para empresa",
+                    style: GoogleFonts.montserrat(
+                        textStyle:
+                            const TextStyle(color: Colors.white, fontSize: 18)),
+                  ),
                 ),
-              ),
-            ],
+                SizedBox(
+                  height: 50,
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Blog",
+                    style: GoogleFonts.montserrat(
+                        textStyle:
+                            const TextStyle(color: Colors.white, fontSize: 18)),
+                  ),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Ajuda",
+                    style: GoogleFonts.montserrat(
+                        textStyle:
+                            const TextStyle(color: Colors.white, fontSize: 18)),
+                  ),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Quem ajuda",
+                    style: GoogleFonts.montserrat(
+                        textStyle:
+                            const TextStyle(color: Colors.white, fontSize: 18)),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
