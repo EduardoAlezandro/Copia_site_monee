@@ -11,11 +11,12 @@ void main() {
       getPages: AppPages.routes,
       theme: ThemeData(
         outlinedButtonTheme: OutlinedButtonThemeData(
-          style: OutlinedButton.styleFrom(primary: Color(0xff059f77)),
+          style: OutlinedButton.styleFrom(primary: const Color(0xff059f77)),
         ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
-            primary: Color(0xff059f77),
+            backgroundColor: const Color(0xff181c1b),
+            primary: const Color(0xff059f77),
           ),
         ),
       )));
