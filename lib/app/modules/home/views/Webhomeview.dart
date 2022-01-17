@@ -311,26 +311,31 @@ class _WebViewState extends State<WebView> {
                                             thumbColor: const Color(0xff059f77),
                                             activeColor:
                                                 const Color(0xff059f77),
-                                            value: widget.controller.rating.value,
+                                            value:
+                                                widget.controller.rating.value,
                                             divisions: 36,
                                             min: 6,
                                             max: 36,
-                                            label: "${widget.controller.rating.value}",
+                                            label:
+                                                "${widget.controller.rating.value}",
                                             onChanged: (double value) {
-                                              widget.controller.rating.value = value;
+                                              widget.controller.rating.value =
+                                                  value;
                                             },
                                           )),
                                       Obx(() => Slider(
                                             thumbColor: const Color(0xff059f77),
                                             activeColor:
                                                 const Color(0xff059f77),
-                                            value: widget.controller.rating2.value,
+                                            value:
+                                                widget.controller.rating2.value,
                                             divisions: 50,
                                             max: 50,
                                             label:
                                                 "\$${widget.controller.rating2.value.toStringAsFixed(3)}",
                                             onChanged: (double value2) {
-                                              widget.controller.rating2.value = value2;
+                                              widget.controller.rating2.value =
+                                                  value2;
                                             },
                                           )),
                                     ],
@@ -635,12 +640,12 @@ class _WebViewState extends State<WebView> {
             children: [
               Container(
                 color: Color(0xff181b1c),
-                height: MediaQuery.of(context).size.height / 1.3,
+                height: MediaQuery.of(context).size.height / 1,
                 width: MediaQuery.of(context).size.width / 4,
               ),
               Container(
                 color: Color(0xff181b1c),
-                height: MediaQuery.of(context).size.height / 1.3,
+                height: MediaQuery.of(context).size.height / 1,
                 width: MediaQuery.of(context).size.width / 2,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -762,8 +767,11 @@ class _WebViewState extends State<WebView> {
                           style: GoogleFonts.montserrat(
                               textStyle: const TextStyle(
                             color: Colors.white,
-                            fontSize: 16,)),),
-                      ),),
+                            fontSize: 16,
+                          )),
+                        ),
+                      ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
                       child: Text(
@@ -791,7 +799,7 @@ class _WebViewState extends State<WebView> {
               ),
               Container(
                 color: const Color(0xff181c1b),
-                height: MediaQuery.of(context).size.height / 1.3,
+                height: MediaQuery.of(context).size.height / 1,
                 width: MediaQuery.of(context).size.width / 4,
               )
             ],

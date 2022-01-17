@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/app/modules/Quem_somos/views/quem_somos_view.dart';
 import 'package:flutter_application_1/app/modules/home/views/ApphomeView.dart';
 import 'package:flutter_application_1/app/modules/home/views/Webhomeview.dart';
 
@@ -47,7 +48,9 @@ class HomeView extends GetView<HomeController> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/quem-somos');
+                  },
                   child: Text(
                     "Quem somos",
                     style: GoogleFonts.montserrat(

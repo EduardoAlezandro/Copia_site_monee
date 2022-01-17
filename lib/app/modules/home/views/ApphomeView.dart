@@ -276,6 +276,18 @@ class AppView extends StatelessWidget {
                                                 },
                                               )),
                                           SizedBox(
+                                            width: 135,
+                                          ),
+                                          ElevatedButton(
+                                            style: ButtonStyle(
+                                                backgroundColor:
+                                                    MaterialStateProperty
+                                                        .all<Color>(const Color(
+                                                            0xff059f77))),
+                                            onPressed: () => {},
+                                            child: const Text("Simular"),
+                                          ),
+                                          SizedBox(
                                             height: 75,
                                           ),
                                           Divider(
@@ -609,6 +621,34 @@ class AppView extends StatelessWidget {
                                                                     fontSize:
                                                                         12,
                                                                   ))),
+                                                            ),
+                                                            SizedBox(
+                                                              height: 20,
+                                                            ),
+                                                            Container(
+                                                              height: 50,
+                                                              width: 220,
+                                                              color: Colors
+                                                                  .black12,
+                                                              child:
+                                                                  ElevatedButton(
+                                                                style:
+                                                                    ButtonStyle(
+                                                                  backgroundColor: MaterialStateProperty.all<
+                                                                          Color>(
+                                                                      const Color(
+                                                                          0xff059f77)),
+                                                                ),
+                                                                onPressed: () =>
+                                                                    {},
+                                                                child:
+                                                                    const Text(
+                                                                  "INDIQUE SUA EMPRESA AGORA",
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                ),
+                                                              ),
                                                             ),
                                                             SizedBox(
                                                               height: 20,
