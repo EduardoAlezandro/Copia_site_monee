@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/app/modules/home/views/Webhomeview.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../controllers/quem_somos_controller.dart';
 import 'Appview.dart';
-import 'WebView.dart';
+import 'WebViewQs.dart';
 
 class QuemSomosView extends GetView<QuemSomosController> {
   @override
@@ -11,7 +12,7 @@ class QuemSomosView extends GetView<QuemSomosController> {
     return Scaffold(body:
         LayoutBuilder(builder: (BuildContext, BoxConstraints constraints) {
       if (constraints.maxWidth >= 1160) {
-        return WebView(context, controller);
+        return WebViewQs(context, controller);
       } else {
         return Stack(children: [
           _menu(context, controller),

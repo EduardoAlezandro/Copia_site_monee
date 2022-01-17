@@ -45,7 +45,9 @@ class _WebViewState extends State<WebView> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.toNamed('/quem-somos');
+                        },
                         child: Text(
                           "Quem somos",
                           style: GoogleFonts.montserrat(
