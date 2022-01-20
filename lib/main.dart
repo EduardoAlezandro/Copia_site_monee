@@ -6,7 +6,7 @@ import 'app/routes/app_pages.dart';
 
 void main() {
   return runApp(GetMaterialApp(
-      title: "Application",
+      title: "Monee",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       theme: ThemeData(

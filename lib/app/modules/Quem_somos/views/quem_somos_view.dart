@@ -55,7 +55,9 @@ Widget _menu(context, controller) {
                 height: 50,
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed('/consiguinado-privado');
+                },
                 child: Text(
                   "Consiguinado Privado",
                   style: GoogleFonts.montserrat(
@@ -67,7 +69,9 @@ Widget _menu(context, controller) {
                 height: 50,
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed('/para-voce');
+                },
                 child: Text(
                   "Para você",
                   style: GoogleFonts.montserrat(

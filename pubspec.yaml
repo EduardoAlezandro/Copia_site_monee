@@ -12,6 +12,7 @@ dependencies:
   get: 4.6.1
   flutter: 
     sdk: flutter
+  youtube_player_iframe: 2.0.0 
 
 dev_dependencies: 
   flutter_lints: ^1.0.0
@@ -29,8 +30,10 @@ flutter:
     - assets/image/1contato.png
     - assets/image/2parceria.png
     - assets/image/3pedido.png
-    - assets/image/4liberaçao.png
+    - assets/image/4liberacao.png
     - assets/image/arrow.png
     - assets/image/deveres.png
+    - assets/image/bodyI.png
+    - assets/image/gem.png
 
 

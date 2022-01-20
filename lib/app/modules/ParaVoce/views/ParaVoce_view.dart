@@ -1,36 +1,28 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/app/modules/Quem_somos/views/quem_somos_view.dart';
-import 'package:flutter_application_1/app/modules/home/views/ApphomeView.dart';
-import 'package:flutter_application_1/app/modules/home/views/Webhomeview.dart';
-
+import 'package:flutter_application_1/app/modules/ParaVoce/views/WebviewPV.dart';
 import 'package:get/get.dart';
-
-import '../controllers/home_controller.dart';
-
 import 'package:google_fonts/google_fonts.dart';
+import 'AppviewPV.dart';
+import '../controllers/ParaVoce_controller.dart';
+import 'WebviewPV.dart';
 
-double rating = 0;
-
-class HomeView extends GetView<HomeController> {
-  const HomeView({Key? key}) : super(key: key);
-
+class ParaVoceView extends GetView<ParaVoceController> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: LayoutBuilder(
-      builder: (BuildContext, BoxConstraints constraints) {
-        if (constraints.maxWidth >= 1160) {
-          return WebView(context, controller);
-        } else {
-          return Stack(
-              children: [_menu(context), AppView(context, controller)]);
-        }
-      },
-    ));
+    return Scaffold(body:
+        LayoutBuilder(builder: (BuildContext, BoxConstraints constraints) {
+      if (constraints.maxWidth >= 1160) {
+        return WebViewPv(context, controller);
+      } else {
+        return Stack(children: [
+          _menu(context, controller),
+          AppviewPV(context, controller)
+        ]);
+      }
+    }));
   }
 
-  Widget _menu(context) {
+  Widget _menu(context, controller) {
     return Container(
       color: Color(0Xff181c1b),
       child: GestureDetector(

@@ -1,3 +1,4 @@
+import 'package:flutter_application_1/app/modules/consiguinado_privado/controllers/consiguinado_privado_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/app/modules/Quem_somos/controllers/quem_somos_controller.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -6,14 +7,11 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class AppView extends StatelessWidget {
+class AppviewCP extends StatelessWidget {
   BuildContext context;
-  QuemSomosController controller;
+  ConsiguinadoPrivadoController controller;
 
-  AppView(
-    this.context,
-    this.controller,
-  );
+  AppviewCP(this.context, this.controller);
 
   @override
   Widget build(BuildContext context) {
@@ -33,20 +31,19 @@ class AppView extends StatelessWidget {
         child: GestureDetector(
             onHorizontalDragEnd: (DragEndDetails oi) {
               controller.menuclick.value = !controller.menuclick.value;
-              print(DragUpdateDetails);
             },
             child: SingleChildScrollView(
                 child: Material(
                     elevation: 15,
                     color: Color(0xff059f77),
                     child: Container(
-                        width: size.width,
+                        width: MediaQuery.of(context).size.width,
                         color: Colors.black26,
                         padding:
                             const EdgeInsets.only(left: 16, right: 16, top: 20),
                         child: Column(children: <Widget>[
                           appbar(),
-                          bodyp1(),
+                          bodyp1(screenwidth, screenheight),
                           bodyp2(),
                           footerMB(),
                         ])))))));
@@ -85,10 +82,10 @@ class AppView extends StatelessWidget {
         ),
       );
 
-  bodyp1() => Material(
+  bodyp1(screenwidth, screenheight) => Material(
         elevation: 8,
         child: Container(
-          width: MediaQuery.of(context).size.width / 1,
+          width: screenwidth / 1,
           color: Color(0xff181c1b),
           child: Column(
             children: [
@@ -102,27 +99,31 @@ class AppView extends StatelessWidget {
                     width: 10,
                   ),
                   Text(
-                    "QUEM SOMOS",
+                    "CONSIGUINADO PRIVADO",
                     textAlign: TextAlign.start,
                     style: GoogleFonts.montserrat(
                         textStyle:
-                            TextStyle(color: Colors.white, fontSize: 15)),
+                            TextStyle(color: Colors.white, fontSize: 20)),
                   ),
                 ],
               ),
               SizedBox(
                 height: 10,
               ),
-              Row(
+              Wrap(
                 children: [
                   SizedBox(
                     width: 10,
                   ),
-                  Text("Sobre a Monee",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                              color: Color(0xff059f77), fontSize: 25))),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text(
+                        "Empréstimo consignado privado com taxas competitivas.",
+                        textAlign: TextAlign.start,
+                        style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                                color: Color(0xff059f77), fontSize: 25))),
+                  ),
                 ],
               ),
               SizedBox(
@@ -131,15 +132,21 @@ class AppView extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Text(
-                    "É uma plataforma online focada no acesso ao crédito consignado privado que nasceu para que as pessoas possam realizar o que elas têm vontade. Para nós, viabilizar o acesso ao crédito tem como base uma filosofia pautada em escutar, entender e criar junto com quem deposita confiança na gente. Afinal de contas, ter independência e controle sobre as próprias escolhas agora faz a vida andar pra frente",
+                    "Experimente o poder de fazer o que você tem vontade agora. Por que não hoje? A melhor opção de empréstimo pessoal.",
                     textAlign: TextAlign.start,
                     style: GoogleFonts.montserrat(
                         textStyle:
-                            TextStyle(color: Color(0xff059f77), fontSize: 18))),
+                            TextStyle(color: Colors.white, fontSize: 14))),
               ),
               SizedBox(
                 height: 40,
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Image.asset("assets/image/logo2.png"),
+                ],
+              )
             ],
           ),
         ),
@@ -157,89 +164,49 @@ class AppView extends StatelessWidget {
                 SizedBox(
                   height: 40,
                 ),
-                LimitedBox(
-                    maxHeight: 100,
-                    maxWidth: 100,
-                    child: Image.asset(
-                      "assets/image/arrow.png",
-                      color: Color(0xff181c1b),
-                    )),
-                SizedBox(
-                  height: 40,
-                ),
-                Text("Sobre a Monee",
-                    textAlign: TextAlign.center,
+                Text("O que é empréstimo",
+                    textAlign: TextAlign.start,
                     style: GoogleFonts.montserrat(
                         textStyle:
-                            TextStyle(color: Color(0xff059f77), fontSize: 25))),
-                SizedBox(
-                  height: 30,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 25),
-                  child: Text(
-                      "Viabilizar o acesso ao crédito, e consequentemente, as realizacoes de vida das pessoas.",
+                            TextStyle(color: Color(0xff181c1b), fontSize: 20))),
+                Wrap(children: [
+                  Text("CONSIGNADO PRIVADO?",
                       textAlign: TextAlign.start,
                       style: GoogleFonts.montserrat(
                           textStyle: TextStyle(
-                              color: Color(0xff181c1b), fontSize: 18))),
-                ),
-                LimitedBox(
-                    maxHeight: 100,
-                    maxWidth: 100,
-                    child: Image.asset(
-                      "assets/image/gem.png",
-                      color: Color(0xff181c1b),
-                    )),
-                SizedBox(
-                  height: 40,
-                ),
-                Text("Valores",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.montserrat(
-                        textStyle:
-                            TextStyle(color: Color(0xff059f77), fontSize: 25))),
+                              color: Color(0xff059f77), fontSize: 25))),
+                ]),
                 SizedBox(
                   height: 30,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 25),
-                  child: Text(
-                      "Integridade, Ética, Comunicação aberta e honesta, Respeito, Humildade e Simplicidade.",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                              color: Color(0xff181c1b), fontSize: 18))),
+                  child: Wrap(
+                    children: [
+                      Text(
+                          "Você já conhece o velho empréstimo consignado, certo? Pois o consignado privado é uma linha especial onde o valor contratado é descontado todos os meses do salário. Assim, o colaborador não precisa se preocupar com o pagamento das parcelas.",
+                          textAlign: TextAlign.start,
+                          style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(
+                                  color: Color(0xff181c1b), fontSize: 18))),
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 40,
-                ),
-                LimitedBox(
-                    maxHeight: 100,
-                    maxWidth: 100,
-                    child: Image.asset(
-                      "assets/image/deveres.png",
-                      color: Color(0xff181c1b),
-                    )),
-                SizedBox(
-                  height: 40,
-                ),
-                Text("Deveres",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.montserrat(
-                        textStyle:
-                            TextStyle(color: Color(0xff059f77), fontSize: 25))),
-                SizedBox(
-                  height: 30,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 25),
-                  child: Text(
-                      "Integridade, Ética, Comunicação aberta e honesta, Respeito, Humildade e Simplicidade.",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                              color: Color(0xff181c1b), fontSize: 18))),
+                  child: Wrap(
+                    children: [
+                      Text(
+                          "Na Monee, queremos ajudar você a ter independência hoje. Por isso, oferecemos uma taxa de juros justa para que possa resolver seus problemas financeiros ou realizar seus sonhos agora. Como somos uma plataforma digital, tudo isso é feito de forma simples, transparente e rápida. Afinal de contas, a vida não para.",
+                          textAlign: TextAlign.start,
+                          style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(
+                                  color: Color(0xff181c1b), fontSize: 18))),
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 40,
@@ -247,66 +214,153 @@ class AppView extends StatelessWidget {
                 Material(
                   elevation: 8,
                   child: Container(
-                      color: Color(0xff059f77),
-                      width: MediaQuery.of(context).size.width / 1,
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 40,
-                          ),
-                          Text(
-                            "NÃO SOMOS UM BANCO!",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
-                                    fontSize: 35, color: Colors.white)),
-                          ),
-                          SizedBox(
-                            height: 40,
-                          ),
-                          Text(
-                            "Nós somos uma fintech. Ou seja, um tipo de startup que vêm revolucionando o mercado financeiro no país ao oferecer acesso ao crédito. No nosso caso, viabilizamos empréstimos consignados privados para que as empresas possam oferecer aos seus colaboradores. Esse serviço conta com vantagens como agilidade, segurança e menores taxas. Queremos escutar você.",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
-                                    fontSize: 16, color: Colors.white)),
-                          ),
-                          SizedBox(
-                            height: 40,
-                          ),
-                          Text(
-                            "Quer bater um papo com a gente?",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
-                                    fontSize: 20, color: Colors.white)),
-                          ),
-                          SizedBox(
-                            height: 40,
-                          ),
-                          Material(
-                            elevation: 8,
-                            child: Container(
-                              width: 150,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  shape: BoxShape.rectangle),
-                              child: TextButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    "WhatsApp",
-                                    style: GoogleFonts.montserrat(
-                                        textStyle: const TextStyle(
-                                            color: Colors.white, fontSize: 18)),
-                                  )),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 40,
-                          )
-                        ],
-                      )),
+                    width: MediaQuery.of(context).size.width / 1,
+                    color: Color(0xff059f77),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                              color: Color(0xff059f77),
+                              height: 170,
+                              child: Image.asset(
+                                "assets/image/bodyI.png",
+                                color: Colors.white,
+                              )),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                              "O QUE O COLABORADOR PODE FAZER AGORA PARA TER ACESSO A ESSE TIPO DE CRÉDITO?",
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.montserrat(
+                                  textStyle: TextStyle(
+                                      color: Colors.white, fontSize: 18))),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                              "Precisa trabalhar para uma empresa privada que seja",
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.montserrat(
+                                  textStyle: TextStyle(
+                                      color: Colors.white, fontSize: 15))),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Wrap(children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text("Sua empresa já é parceira da monee?",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                                color: Color(0xff059f77), fontSize: 25))),
+                  ),
+                ]),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Text(
+                      "Veja o que você precisa fazer para se cadastrar e ter acesso ao crédito:",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              color: Color(0xff181c1b), fontSize: 18))),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                LimitedBox(
+                    maxHeight: 100,
+                    maxWidth: 100,
+                    child: Image.asset(
+                      "assets/image/1contato.png",
+                      color: Color(0xff181c1b),
+                    )),
+                SizedBox(
+                  height: 10,
+                ),
+                Text("Faça o seu cadastro",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.montserrat(
+                        textStyle:
+                            TextStyle(color: Color(0xff059f77), fontSize: 25))),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Text(
+                      "É só escolher a opção Colaborador na opção Entre agora na home do site. Você vai precisar preencher alguns dados e enviar seus documentos pelo site mesmo.",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              color: Color(0xff181c1b), fontSize: 18))),
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                LimitedBox(
+                    maxHeight: 100,
+                    maxWidth: 100,
+                    child: Image.asset(
+                      "assets/image/4liberacao.png",
+                      color: Color(0xff181c1b),
+                    )),
+                SizedBox(
+                  height: 10,
+                ),
+                Text("Aguarde a Análise Financeira",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.montserrat(
+                        textStyle:
+                            TextStyle(color: Color(0xff059f77), fontSize: 25))),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Text(
+                      "Não demora nada, viu? Serve para sabermos se o crédito que você precisa está de acordo com o seu perfil.",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              color: Color(0xff181c1b), fontSize: 18))),
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                LimitedBox(
+                    maxHeight: 100,
+                    maxWidth: 100,
+                    child: Image.asset(
+                      "assets/image/3pedido.png",
+                      color: Color(0xff181c1b),
+                    )),
+                SizedBox(
+                  height: 10,
+                ),
+                Text("Hora do dinheiro cair na conta",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.montserrat(
+                        textStyle:
+                            TextStyle(color: Color(0xff059f77), fontSize: 25))),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Text(
+                      "Depois da análise e da aprovação, a Monee libera o crédito na sua conta em 24 horas. Rápido e fácil. Porque a vida não espera.",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              color: Color(0xff181c1b), fontSize: 18))),
                 ),
               ],
             )),
