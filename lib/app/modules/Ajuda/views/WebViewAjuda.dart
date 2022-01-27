@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/app/modules/blog/controllers/blog_controller.dart';
+import 'package:flutter_application_1/app/modules/Ajuda/controllers/ajuda_controller.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class WebViewBlg extends StatelessWidget {
+class WebViewAjuda extends StatelessWidget {
   BuildContext context;
-  BlogController controller;
+  AjudaController controller;
 
-  WebViewBlg(
+  WebViewAjuda(
     this.context,
     this.controller,
   );
@@ -35,139 +35,293 @@ class WebViewBlg extends StatelessWidget {
                         const EdgeInsets.only(left: 16, right: 16, top: 20),
                     child: Column(children: <Widget>[
                       _appbarwev(),
-                      whitebox(context),
+                      Bodye1(context),
                       footerWB()
                     ]))));
   }
 }
 
-_appbarwev<Widget>() => Container(
-      height: 75,
-      color: Color(0xff181c1b),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Padding(
-              padding: const EdgeInsets.all(0),
-              child: OutlinedButton(
-                onPressed: () {
-                  Get.toNamed('/home');
-                },
-                child: LimitedBox(
-                    maxWidth: 75,
-                    maxHeight: 75,
-                    child: Image.asset("assets/image/logo.png")),
-              )),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextButton(
-              onPressed: () {
-                Get.toNamed('/quem-somos');
-              },
-              child: Text(
-                "Quem somos",
-                style: GoogleFonts.montserrat(
-                    textStyle:
-                        const TextStyle(color: Colors.white, fontSize: 12)),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextButton(
-              onPressed: () {
-                Get.toNamed('/consiguinado-privado');
-              },
-              child: Text(
-                "Consiginado Privado",
-                style: GoogleFonts.montserrat(
-                    textStyle:
-                        const TextStyle(color: Colors.white, fontSize: 12)),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextButton(
-              onPressed: () {
-                Get.toNamed('/para-voce');
-              },
-              child: Text(
-                "Para você",
-                style: GoogleFonts.montserrat(
-                    textStyle:
-                        const TextStyle(color: Colors.white, fontSize: 12)),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextButton(
-              onPressed: () {
-                Get.toNamed('/para-empresas');
-              },
-              child: Text(
-                "Para empresas",
-                style: GoogleFonts.montserrat(
-                    textStyle:
-                        const TextStyle(color: Colors.white, fontSize: 12)),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextButton(
-              child: Text(
-                "Blog",
-                style: GoogleFonts.montserrat(
-                    textStyle:
-                        const TextStyle(color: Colors.white, fontSize: 12)),
-              ),
-              onPressed: () {
-                Get.toNamed('/blog');
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextButton(
-              child: Text(
-                "Ajuda",
-                style: GoogleFonts.montserrat(
-                    textStyle:
-                        const TextStyle(color: Colors.white, fontSize: 12)),
-              ),
-              onPressed: () {Get.toNamed('/ajuda');
-              
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.white, width: 1)),
+_appbarwev<Widget>() => Material(
+      elevation: 8,
+      child: Container(
+        height: 75,
+        color: Color(0xff181c1b),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Padding(
+                padding: const EdgeInsets.all(0),
                 child: OutlinedButton(
                   onPressed: () {
-                    // Respond to button press
+                    Get.toNamed('/home');
                   },
-                  child: Text(
-                    "Quem Ajuda",
-                    style: GoogleFonts.montserrat(
-                        textStyle:
-                            const TextStyle(color: Colors.white, fontSize: 9)),
-                  ),
+                  child: LimitedBox(
+                      maxWidth: 75,
+                      maxHeight: 75,
+                      child: Image.asset("assets/image/logo.png")),
                 )),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextButton(
+                onPressed: () {
+                  Get.toNamed('/quem-somos');
+                },
+                child: Text(
+                  "Quem somos",
+                  style: GoogleFonts.montserrat(
+                      textStyle:
+                          const TextStyle(color: Colors.white, fontSize: 12)),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextButton(
+                onPressed: () {
+                  Get.toNamed('/consiguinado-privado');
+                },
+                child: Text(
+                  "Consiginado Privado",
+                  style: GoogleFonts.montserrat(
+                      textStyle:
+                          const TextStyle(color: Colors.white, fontSize: 12)),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextButton(
+                onPressed: () {
+                  Get.toNamed('/para-voce');
+                },
+                child: Text(
+                  "Para você",
+                  style: GoogleFonts.montserrat(
+                      textStyle:
+                          const TextStyle(color: Colors.white, fontSize: 12)),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextButton(
+                onPressed: () {
+                  Get.toNamed('/para-empresas');
+                },
+                child: Text(
+                  "Para empresas",
+                  style: GoogleFonts.montserrat(
+                      textStyle:
+                          const TextStyle(color: Colors.white, fontSize: 12)),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextButton(
+                child: Text(
+                  "Blog",
+                  style: GoogleFonts.montserrat(
+                      textStyle:
+                          const TextStyle(color: Colors.white, fontSize: 12)),
+                ),
+                onPressed: () {
+                  Get.toNamed('/blog');
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextButton(
+                child: Text(
+                  "Ajuda",
+                  style: GoogleFonts.montserrat(
+                      textStyle:
+                          const TextStyle(color: Colors.white, fontSize: 12)),
+                ),
+                onPressed: () {
+                  Get.toNamed('/ajuda');
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.white, width: 1)),
+                  child: OutlinedButton(
+                    onPressed: () {
+                      // Respond to button press
+                    },
+                    child: Text(
+                      "Quem Ajuda",
+                      style: GoogleFonts.montserrat(
+                          textStyle: const TextStyle(
+                              color: Colors.white, fontSize: 9)),
+                    ),
+                  )),
+            ),
+          ],
+        ),
       ),
     );
 
-whitebox(context) => Container(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height / 2,
-      color: Colors.white,
+Bodye1<widget>(context) => Material(
+      elevation: 8,
+      child: Container(
+        width: MediaQuery.of(context).size.width / 1,
+        color: Color(0xff181c1b),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 30,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: 10,
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(40, 0, 40, 0),
+                  child: Text(
+                    "Olá, como podemos",
+                    textAlign: TextAlign.start,
+                    style: GoogleFonts.montserrat(
+                        textStyle:
+                            TextStyle(color: Colors.white, fontSize: 35)),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                SizedBox(
+                  width: 10,
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(40, 0, 40, 0),
+                  child: Text("Te ajudar agora",
+                      textAlign: TextAlign.start,
+                      style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              color: Color(0xff059f77), fontSize: 35))),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 0, 0, 30),
+                  child: Container(
+                    margin: EdgeInsets.fromLTRB(40, 0, 40, 0),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10.0)),
+                    width: 250,
+                    child: TextField(
+                      autofocus: true,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          hintText: 'Informe o nome'),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 0, 0, 30),
+                  child: Container(
+                    margin: EdgeInsets.fromLTRB(40, 0, 40, 0),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10.0)),
+                    width: 250,
+                    child: TextField(
+                      autofocus: true,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          hintText: 'Informe o email'),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 0, 0, 30),
+                  child: Container(
+                    margin: EdgeInsets.fromLTRB(40, 0, 40, 0),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10.0)),
+                    width: 250,
+                    child: TextField(
+                      autofocus: true,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          hintText: 'Assunto'),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 0, 0, 30),
+                  child: Container(
+                    margin: EdgeInsets.fromLTRB(40, 0, 40, 0),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10.0)),
+                    height: 300,
+                    width: MediaQuery.of(context).size.width / 2,
+                    child: TextField(
+                      maxLines: 120,
+                      autofocus: true,
+                      decoration: InputDecoration(
+                          filled: true,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          hintText: 'Mensagem'),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 0, 0, 20),
+                  child: Container(
+                      margin: EdgeInsets.fromLTRB(40, 0, 40, 0),
+                      height: 50,
+                      width: 280,
+                      color: Colors.black12,
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              const Color(0xff059f77)),
+                        ),
+                        onPressed: () => {},
+                        child: const Text(
+                          "ENVIAR MENSAGEM",
+                        ),
+                      )),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: 50,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
 
 footerWB() => Container(

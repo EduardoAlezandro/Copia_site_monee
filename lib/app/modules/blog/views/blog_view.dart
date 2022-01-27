@@ -111,7 +111,9 @@ class BlogView extends GetView<BlogController> {
                   height: 50,
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/ajuda');
+                  },
                   child: Text(
                     "Ajuda",
                     style: GoogleFonts.montserrat(

@@ -41,8 +41,9 @@ class AppViewPE extends StatelessWidget {
                             const EdgeInsets.only(left: 16, right: 16, top: 20),
                         child: Column(children: <Widget>[
                           appbar(),
-                          bodyp1(),
-                          bodyp2(),
+                          Bodye1(context),
+                          bodyVerde(context),
+                          _bodyqs(context),
                           footerMB(),
                         ])))))));
   }
@@ -80,7 +81,7 @@ class AppViewPE extends StatelessWidget {
         ),
       );
 
-  bodyp1() => Material(
+  Bodye1<widget>(context) => Material(
         elevation: 8,
         child: Container(
           width: MediaQuery.of(context).size.width / 1,
@@ -97,7 +98,7 @@ class AppViewPE extends StatelessWidget {
                     width: 10,
                   ),
                   Text(
-                    "QUEM SOMOS",
+                    "PARA EMPRESAS",
                     textAlign: TextAlign.start,
                     style: GoogleFonts.montserrat(
                         textStyle:
@@ -113,7 +114,7 @@ class AppViewPE extends StatelessWidget {
                   SizedBox(
                     width: 10,
                   ),
-                  Text("Sobre a Monee",
+                  Text("Empréstimo Consignado privado",
                       textAlign: TextAlign.center,
                       style: GoogleFonts.montserrat(
                           textStyle: TextStyle(
@@ -126,7 +127,7 @@ class AppViewPE extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Text(
-                    "É uma plataforma online focada no acesso ao crédito consignado privado que nasceu para que as pessoas possam realizar o que elas têm vontade. Para nós, viabilizar o acesso ao crédito tem como base uma filosofia pautada em escutar, entender e criar junto com quem deposita confiança na gente. Afinal de contas, ter independência e controle sobre as próprias escolhas agora faz a vida andar pra frente",
+                    "O caminho mais fácil para tranquilizar e deixar os seus colaboradores mais felizes. Na Monee isso é possível. Por que não agora?",
                     textAlign: TextAlign.start,
                     style: GoogleFonts.montserrat(
                         textStyle:
@@ -140,7 +141,7 @@ class AppViewPE extends StatelessWidget {
         ),
       );
 
-  bodyp2() => Material(
+  _bodyqs(context) => Material(
         elevation: 8,
         child: Container(
             width: MediaQuery.of(context).size.width / 1,
@@ -152,157 +153,353 @@ class AppViewPE extends StatelessWidget {
                 SizedBox(
                   height: 40,
                 ),
-                LimitedBox(
-                    maxHeight: 100,
-                    maxWidth: 100,
-                    child: Image.asset(
-                      "assets/image/arrow.png",
-                      color: Color(0xff181c1b),
-                    )),
-                SizedBox(
-                  height: 40,
-                ),
-                Text("Sobre a Monee",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.montserrat(
-                        textStyle:
-                            TextStyle(color: Color(0xff059f77), fontSize: 25))),
-                SizedBox(
-                  height: 30,
-                ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 25),
-                  child: Text(
-                      "Viabilizar o acesso ao crédito, e consequentemente, as realizacoes de vida das pessoas.",
-                      textAlign: TextAlign.start,
-                      style: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                              color: Color(0xff181c1b), fontSize: 18))),
-                ),
-                LimitedBox(
-                    maxHeight: 100,
-                    maxWidth: 100,
-                    child: Image.asset(
-                      "assets/image/gem.png",
-                      color: Color(0xff181c1b),
-                    )),
-                SizedBox(
-                  height: 40,
-                ),
-                Text("Valores",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.montserrat(
-                        textStyle:
-                            TextStyle(color: Color(0xff059f77), fontSize: 25))),
-                SizedBox(
-                  height: 30,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 25),
-                  child: Text(
-                      "Integridade, Ética, Comunicação aberta e honesta, Respeito, Humildade e Simplicidade.",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                              color: Color(0xff181c1b), fontSize: 18))),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                LimitedBox(
-                    maxHeight: 100,
-                    maxWidth: 100,
-                    child: Image.asset(
-                      "assets/image/deveres.png",
-                      color: Color(0xff181c1b),
-                    )),
-                SizedBox(
-                  height: 40,
-                ),
-                Text("Deveres",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.montserrat(
-                        textStyle:
-                            TextStyle(color: Color(0xff059f77), fontSize: 25))),
-                SizedBox(
-                  height: 30,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 25),
-                  child: Text(
-                      "Integridade, Ética, Comunicação aberta e honesta, Respeito, Humildade e Simplicidade.",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                              color: Color(0xff181c1b), fontSize: 18))),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                Material(
-                  elevation: 8,
+                  padding: const EdgeInsets.all(8.0),
                   child: Container(
-                      color: Color(0xff059f77),
-                      width: MediaQuery.of(context).size.width / 1,
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 40,
-                          ),
-                          Text(
-                            "NÃO SOMOS UM BANCO!",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
-                                    fontSize: 35, color: Colors.white)),
-                          ),
-                          SizedBox(
-                            height: 40,
-                          ),
-                          Text(
-                            "Nós somos uma fintech. Ou seja, um tipo de startup que vêm revolucionando o mercado financeiro no país ao oferecer acesso ao crédito. No nosso caso, viabilizamos empréstimos consignados privados para que as empresas possam oferecer aos seus colaboradores. Esse serviço conta com vantagens como agilidade, segurança e menores taxas. Queremos escutar você.",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
-                                    fontSize: 16, color: Colors.white)),
-                          ),
-                          SizedBox(
-                            height: 40,
-                          ),
-                          Text(
-                            "Quer bater um papo com a gente?",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
-                                    fontSize: 20, color: Colors.white)),
-                          ),
-                          SizedBox(
-                            height: 40,
-                          ),
-                          Material(
-                            elevation: 8,
-                            child: Container(
-                              width: 150,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  shape: BoxShape.rectangle),
-                              child: TextButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    "WhatsApp",
-                                    style: GoogleFonts.montserrat(
-                                        textStyle: const TextStyle(
-                                            color: Colors.white, fontSize: 18)),
-                                  )),
+                    margin: EdgeInsets.fromLTRB(50, 0, 50, 0),
+                    child: Column(
+                      children: [
+                        Wrap(
+                          alignment: WrapAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Color(0xff059f77),
+                                    borderRadius: BorderRadius.circular(10)),
+                                width: 200,
+                                height: 350,
+                                margin: EdgeInsets.only(left: 10, right: 10),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Column(
+                                    children: [
+                                      LimitedBox(
+                                          maxHeight: 100,
+                                          maxWidth: 100,
+                                          child: Image.asset(
+                                            "image/beneficios.png",
+                                            color: Colors.white,
+                                          )),
+                                      SizedBox(
+                                        height: 40,
+                                      ),
+                                      Text(
+                                          "BENEFÍCIOS PARA A EMPRESA E PARA O RH",
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.montserrat(
+                                              textStyle: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 18))),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Color(0xff059f77),
+                                    borderRadius: BorderRadius.circular(10)),
+                                width: 200,
+                                height: 350,
+                                margin: EdgeInsets.only(left: 10, right: 10),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Column(
+                                    children: [
+                                      LimitedBox(
+                                          maxHeight: 100,
+                                          maxWidth: 100,
+                                          child: Image.asset(
+                                            "image/V.png",
+                                          )),
+                                      SizedBox(
+                                        height: 40,
+                                      ),
+                                      Text("Cria consciência",
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.montserrat(
+                                              textStyle: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 18))),
+                                      Text(
+                                          "Melhora a vida financeira do colaborador e, como consequência, diminui os pedidos de adiantamento de salário, décimo terceiro e férias.",
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.montserrat(
+                                              textStyle: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 12))),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Color(0xff059f77),
+                                    borderRadius: BorderRadius.circular(10)),
+                                width: 200,
+                                height: 350,
+                                margin: EdgeInsets.only(left: 10, right: 10),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Column(
+                                    children: [
+                                      LimitedBox(
+                                          maxHeight: 100,
+                                          maxWidth: 100,
+                                          child: Image.asset(
+                                            "image/V.png",
+                                          )),
+                                      SizedBox(
+                                        height: 40,
+                                      ),
+                                      Text("Facilidade",
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.montserrat(
+                                              textStyle: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 18))),
+                                      Text(
+                                          "A plataforma é 100% online mas o atendimento é humanizado: tem sempre um atendente da Monee para falar com seu RH. Além disso, todas as solicitações são aprovadas com rapidez e não precisa fazer o cálculo do valor a ser descontado do colaborador.",
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.montserrat(
+                                              textStyle: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 12))),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Color(0xff059f77),
+                                    borderRadius: BorderRadius.circular(10)),
+                                width: 200,
+                                height: 350,
+                                margin: EdgeInsets.only(left: 10, right: 10),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Column(
+                                    children: [
+                                      LimitedBox(
+                                          maxHeight: 100,
+                                          maxWidth: 100,
+                                          child: Image.asset(
+                                            "image/V.png",
+                                          )),
+                                      SizedBox(
+                                        height: 40,
+                                      ),
+                                      Text("Diminui a rotatividade",
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.montserrat(
+                                              textStyle: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 18))),
+                                      Text(
+                                          "É uma forma eficiente de diminuir também o número de funcionários querendo forçar demissão para quitar dividar com dinheiro da rescisão contratual.",
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.montserrat(
+                                              textStyle: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 12))),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Color(0xff059f77),
+                                    borderRadius: BorderRadius.circular(10)),
+                                width: 200,
+                                height: 350,
+                                margin: EdgeInsets.only(left: 10, right: 10),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Column(
+                                    children: [
+                                      LimitedBox(
+                                          maxHeight: 100,
+                                          maxWidth: 100,
+                                          child: Image.asset(
+                                            "image/V.png",
+                                          )),
+                                      SizedBox(
+                                        height: 40,
+                                      ),
+                                      Text("Condições reais",
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.montserrat(
+                                              textStyle: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 18))),
+                                      Text(
+                                          "Oferece as menores taxas e condições de crédito consignado do mercado.",
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.montserrat(
+                                              textStyle: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 12))),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Color(0xff059f77),
+                                    borderRadius: BorderRadius.circular(10)),
+                                width: 200,
+                                height: 350,
+                                margin: EdgeInsets.only(left: 10, right: 10),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Column(
+                                    children: [
+                                      LimitedBox(
+                                          maxHeight: 100,
+                                          maxWidth: 100,
+                                          child: Image.asset(
+                                            "image/V.png",
+                                          )),
+                                      SizedBox(
+                                        height: 40,
+                                      ),
+                                      Text("Segurança",
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.montserrat(
+                                              textStyle: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 18))),
+                                      Text(
+                                          "O empréstimo consignado privado significa risco zero para a empresa.",
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.montserrat(
+                                              textStyle: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 12))),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Color(0xff059f77),
+                                    borderRadius: BorderRadius.circular(10)),
+                                width: 200,
+                                height: 350,
+                                margin: EdgeInsets.only(left: 10, right: 10),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Column(
+                                    children: [
+                                      LimitedBox(
+                                          maxHeight: 100,
+                                          maxWidth: 100,
+                                          child: Image.asset(
+                                            "image/V.png",
+                                          )),
+                                      SizedBox(
+                                        height: 40,
+                                      ),
+                                      Text("Educação financeira",
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.montserrat(
+                                              textStyle: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 18))),
+                                      Text(
+                                          "A Monee ajuda a educar os seus colaboradores com palestras, workshops e materiais sobre o assunto.",
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.montserrat(
+                                              textStyle: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 12))),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 40,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 0, 0, 40),
+                          child: Container(
+                            height: 50,
+                            width: 280,
+                            color: Colors.black12,
+                            child: ElevatedButton(
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        const Color(0xff059f77)),
+                              ),
+                              onPressed: () => {},
+                              child: const Text(
+                                "INDIQUE SUA EMPRESA AGORA",
+                              ),
                             ),
                           ),
-                          SizedBox(
-                            height: 40,
-                          )
-                        ],
-                      )),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
+              ],
+            )),
+      );
+
+  bodyVerde(context) => Material(
+        elevation: 8,
+        child: Container(
+            color: Color(0xff059f77),
+            width: MediaQuery.of(context).size.width / 1,
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 40,
+                ),
+                Text(
+                  "O NOSSO DIFERENCIAL!",
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(fontSize: 35, color: Colors.white)),
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                Text(
+                  "Taxas de juros mais baixas para os seus colaboradores. Pois, menos preocupados com questões financerias, com mais qualidade de vida e satisfeitos, eles geram mais produtividade e menos rotatividade para a sua empresa.",
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(fontSize: 16, color: Colors.white)),
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                SizedBox(
+                  height: 40,
+                )
               ],
             )),
       );

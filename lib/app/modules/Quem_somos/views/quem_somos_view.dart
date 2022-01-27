@@ -111,7 +111,9 @@ Widget _menu(context, controller) {
                 height: 50,
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed('/ajuda');
+                },
                 child: Text(
                   "Ajuda",
                   style: GoogleFonts.montserrat(

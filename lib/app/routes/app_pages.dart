@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/Ajuda/bindings/ajuda_binding.dart';
+import '../modules/Ajuda/views/ajuda_view.dart';
 import '../modules/ParaVoce/bindings/ParaVoceBinding.dart';
 import '../modules/ParaVoce/views/ParaVoce_view.dart';
 import '../modules/Para_empresas/bindings/para_empresas_binding.dart';
@@ -59,6 +61,11 @@ class AppPages {
       name: _Paths.BLOG,
       page: () => BlogView(),
       binding: BlogBinding(),
+    ),
+    GetPage(
+      name: _Paths.AJUDA,
+      page: () => AjudaView(),
+      binding: AjudaBinding(),
     ),
   ];
 }

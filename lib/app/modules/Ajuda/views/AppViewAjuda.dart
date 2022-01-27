@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/app/modules/blog/controllers/blog_controller.dart';
+import 'package:flutter_application_1/app/modules/Ajuda/controllers/ajuda_controller.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AppViewBlg extends StatelessWidget {
+class AppViewAjuda extends StatelessWidget {
   BuildContext context;
-  BlogController controller;
+  AjudaController controller;
 
-  AppViewBlg(this.context, this.controller);
+  AppViewAjuda(this.context, this.controller);
 
   @override
   Widget build(BuildContext context) {

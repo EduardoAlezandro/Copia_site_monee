@@ -10,6 +10,7 @@ abstract class Routes {
   static const CONSIGUINADO_PRIVADO = _Paths.CONSIGUINADO_PRIVADO;
   static const PARA_EMPRESAS = _Paths.PARA_EMPRESAS;
   static const BLOG = _Paths.BLOG;
+  static const AJUDA = _Paths.AJUDA;
 }
 
 abstract class _Paths {
@@ -20,4 +21,5 @@ abstract class _Paths {
   static const PARA_VOCE = '/para-voce';
   static const PARA_EMPRESAS = '/para-empresas';
   static const BLOG = '/blog';
+  static const AJUDA = '/ajuda';
 }

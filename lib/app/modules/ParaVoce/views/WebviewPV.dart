@@ -149,7 +149,9 @@ class WebViewPv extends StatelessWidget {
                       textStyle:
                           const TextStyle(color: Colors.white, fontSize: 12)),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed('/ajuda');
+                },
               ),
             ),
             Padding(

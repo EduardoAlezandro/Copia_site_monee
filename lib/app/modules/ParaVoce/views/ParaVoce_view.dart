@@ -110,7 +110,9 @@ class ParaVoceView extends GetView<ParaVoceController> {
                   height: 50,
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/ajuda');
+                  },
                   child: Text(
                     "Ajuda",
                     style: GoogleFonts.montserrat(

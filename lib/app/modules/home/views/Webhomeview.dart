@@ -717,7 +717,9 @@ class _WebViewState extends State<WebView> {
                         textStyle:
                             const TextStyle(color: Colors.white, fontSize: 12)),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/ajuda');
+                  },
                 ),
               ),
               Padding(

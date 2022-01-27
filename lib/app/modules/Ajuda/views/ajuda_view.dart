@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/app/modules/Para_empresas/views/Appiew.dart';
-import 'package:flutter_application_1/app/modules/Para_empresas/views/WebViewPe.dart';
+import 'package:flutter_application_1/app/modules/Ajuda/views/AppViewAjuda.dart';
+import 'package:flutter_application_1/app/modules/Ajuda/views/WebViewAjuda.dart';
+
 import 'package:get/get.dart';
-import '../controllers/para_empresas_controller.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ParaEmpresasView extends GetView<ParaEmpresasController> {
+import '../controllers/ajuda_controller.dart';
+
+class AjudaView extends GetView<AjudaController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(body:
         LayoutBuilder(builder: (BuildContext, BoxConstraints constraints) {
       if (constraints.maxWidth >= 1160) {
-        return WebViewPe(context, controller);
+        return WebViewAjuda(context, controller);
       } else {
         return Stack(children: [
           _menu(context, controller),
-          AppViewPE(context, controller)
+          AppViewAjuda(context, controller)
         ]);
       }
     }));
