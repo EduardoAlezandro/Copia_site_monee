@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/app/modules/ParaVoce/views/WebviewPV.dart';
+import 'package:flutter_application_1/app/modules/Para_empresas/views/Appiew.dart';
+import 'package:flutter_application_1/app/modules/Para_empresas/views/WebViewPe.dart';
 import 'package:get/get.dart';
+import '../controllers/para_empresas_controller.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'AppviewPV.dart';
-import '../controllers/ParaVoce_controller.dart';
-import 'WebviewPV.dart';
 
-class ParaVoceView extends GetView<ParaVoceController> {
+class ParaEmpresasView extends GetView<ParaEmpresasController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(body:
         LayoutBuilder(builder: (BuildContext, BoxConstraints constraints) {
       if (constraints.maxWidth >= 1160) {
-        return WebViewPv(context, controller);
+        return WebViewPe(context, controller);
       } else {
         return Stack(children: [
           _menu(context, controller),
-          AppviewPV(context, controller)
+          AppViewPE(context, controller)
         ]);
       }
     }));

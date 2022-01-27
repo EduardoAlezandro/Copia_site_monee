@@ -683,7 +683,9 @@ class _WebViewState extends State<WebView> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/para-empresas');
+                  },
                   child: Text(
                     "Para empresas",
                     style: GoogleFonts.montserrat(
@@ -701,7 +703,9 @@ class _WebViewState extends State<WebView> {
                         textStyle:
                             const TextStyle(color: Colors.white, fontSize: 12)),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/blog');
+                  },
                 ),
               ),
               Padding(

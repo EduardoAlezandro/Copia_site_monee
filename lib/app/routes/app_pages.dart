@@ -1,8 +1,13 @@
-import 'package:flutter_application_1/app/modules/ParaVoce/bindings/ParaVoceBinding.dart';
-import 'package:flutter_application_1/app/modules/ParaVoce/views/ParaVoce_view.dart';
 import 'package:get/get.dart';
+
+import '../modules/ParaVoce/bindings/ParaVoceBinding.dart';
+import '../modules/ParaVoce/views/ParaVoce_view.dart';
+import '../modules/Para_empresas/bindings/para_empresas_binding.dart';
+import '../modules/Para_empresas/views/para_empresas_view.dart';
 import '../modules/Quem_somos/bindings/quem_somos_binding.dart';
 import '../modules/Quem_somos/views/quem_somos_view.dart';
+import '../modules/blog/bindings/blog_binding.dart';
+import '../modules/blog/views/blog_view.dart';
 import '../modules/consiguinado_privado/bindings/consiguinado_privado_binding.dart';
 import '../modules/consiguinado_privado/views/consiguinado_privado_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -44,6 +49,16 @@ class AppPages {
       name: _Paths.PARA_VOCE,
       page: () => ParaVoceView(),
       binding: ParaVoceBinding(),
+    ),
+    GetPage(
+      name: _Paths.PARA_EMPRESAS,
+      page: () => ParaEmpresasView(),
+      binding: ParaEmpresasBinding(),
+    ),
+    GetPage(
+      name: _Paths.BLOG,
+      page: () => BlogView(),
+      binding: BlogBinding(),
     ),
   ];
 }

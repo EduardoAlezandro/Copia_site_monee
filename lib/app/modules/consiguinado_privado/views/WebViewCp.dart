@@ -109,7 +109,9 @@ class WebViewCp extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed('/para-empresas');
+                },
                 child: Text(
                   "Para empresas",
                   style: GoogleFonts.montserrat(
@@ -127,7 +129,9 @@ class WebViewCp extends StatelessWidget {
                       textStyle:
                           const TextStyle(color: Colors.white, fontSize: 12)),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed('/blog');
+                },
               ),
             ),
             Padding(

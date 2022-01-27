@@ -82,7 +82,9 @@ class ConsiguinadoPrivadoView extends GetView<ConsiguinadoPrivadoController> {
                   height: 50,
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/para-empresas');
+                  },
                   child: Text(
                     "Para empresa",
                     style: GoogleFonts.montserrat(
@@ -94,7 +96,9 @@ class ConsiguinadoPrivadoView extends GetView<ConsiguinadoPrivadoController> {
                   height: 50,
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/blog');
+                  },
                   child: Text(
                     "Blog",
                     style: GoogleFonts.montserrat(
