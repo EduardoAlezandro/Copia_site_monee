@@ -1,7 +1,11 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Widgets/rotate.dart';
 import 'package:flutter_application_1/app/modules/Ajuda/controllers/ajuda_controller.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:animate_icons/animate_icons.dart';
 
 class WebViewAjuda extends StatelessWidget {
   BuildContext context;
@@ -14,12 +18,28 @@ class WebViewAjuda extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    late Animation<double> animation;
+    late AnimationController controllerr;
+    controllerr = AnimationController(
+        vsync: Scaffold.of(context), duration: Duration(milliseconds: 700));
+
     Size size = MediaQuery.of(context).size;
     double screenwidth = 0;
     double screenheight = 0;
     final Duration duration = const Duration(milliseconds: 300);
     screenwidth = size.width;
     screenheight = size.height;
+
+    void setRotation(int degrees) {
+      final angle = degrees * pi / 180;
+      animation = Tween<double>(begin: 0, end: angle).animate(controllerr);
+      setRotation(90);
+    }
+
+    late int degrees = 90;
+    final angle = degrees * pi / 180;
+
+    animation = Tween<double>(begin: 0, end: angle).animate(controllerr);
 
     return
 
@@ -36,6 +56,8 @@ class WebViewAjuda extends StatelessWidget {
                     child: Column(children: <Widget>[
                       _appbarwev(),
                       Bodye1(context),
+                      bodyVerde(context),
+                      bodywhite(context, controller, controllerr, animation),
                       footerWB()
                     ]))));
   }
@@ -162,6 +184,639 @@ _appbarwev<Widget>() => Material(
                     ),
                   )),
             ),
+          ],
+        ),
+      ),
+    );
+
+bodyVerde(context) => Material(
+      elevation: 8,
+      child: Container(
+          color: Color(0xff059f77),
+          width: MediaQuery.of(context).size.width / 1,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 60,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50),
+                    child: Text(
+                      "Digite aqui a palavra-chave",
+                      textAlign: TextAlign.start,
+                      style: GoogleFonts.montserrat(
+                          textStyle:
+                              TextStyle(fontSize: 35, color: Colors.white)),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 50.0),
+                    child: Container(
+                      width: 400,
+                      height: 30,
+                      color: Colors.white,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: TextField(
+                          keyboardType: TextInputType.text,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 60,
+              ),
+            ],
+          )),
+    );
+
+bodywhite(context, controller, controllerr, animation) => Material(
+      elevation: 8,
+      child: Container(
+        margin: EdgeInsets.fromLTRB(100, 0, 100, 100),
+        width: MediaQuery.of(context).size.width,
+        child: Wrap(
+          children: [
+            Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 50, top: 50),
+                  child: Stack(
+                    alignment: AlignmentDirectional.topEnd,
+                    children: [
+                      AnimatedCrossFade(
+                          firstChild: GestureDetector(
+                            onTap: () {
+                              if (controller.efeitoclick.value == true) {
+                                controller.efeitoclick.value = false;
+                              } else {
+                                controller.efeitoclick.value = true;
+                              }
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: (Border.all(
+                                      style: BorderStyle.solid,
+                                      color: Color(0xff059f77)))),
+                              width: 350,
+                              height: 100,
+                              child: Stack(children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(18.0),
+                                  child: Text(
+                                    "O QUE E EMPRÉSTIMO CONSIGNADO PRIVADO",
+                                    style: GoogleFonts.montserrat(
+                                        textStyle: TextStyle(fontSize: 18),
+                                        color: Color(0xff059f77)),
+                                  ),
+                                ),
+                              ]),
+                            ),
+                          ),
+                          secondChild: GestureDetector(
+                            onTap: () {
+                              if (controller.efeitoclick.value == true) {
+                                controller.efeitoclick.value = false;
+                              } else {
+                                controller.efeitoclick.value = true;
+                              }
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: (Border.all(
+                                      style: BorderStyle.solid,
+                                      color: Color(0xff059f77)))),
+                              width: 350,
+                              height: 300,
+                              child: Padding(
+                                padding: const EdgeInsets.all(28.0),
+                                child: Text(
+                                  "É uma modalidade de crédito regulamentada pela Lei Federal 10.820/2003 em que as parcelas não ultrapassam 30% do salário líquido e são descontadas no holerite do colaborador.",
+                                  textAlign: TextAlign.start,
+                                  style: GoogleFonts.montserrat(
+                                      textStyle: TextStyle(fontSize: 15),
+                                      color: Color(0xff059f77)),
+                                ),
+                              ),
+                            ),
+                          ),
+                          crossFadeState: controller.efeitoclick.value
+                              ? CrossFadeState.showFirst
+                              : CrossFadeState.showSecond,
+                          duration: Duration(milliseconds: 650)),
+                      Padding(
+                          padding: const EdgeInsets.fromLTRB(8, 20, 8, 8),
+                          child: AnimatedBuilder(
+                            animation: animation,
+                            child: GestureDetector(
+                              onTap: () {
+                                controller.forward(from: 0);
+                              },
+                              child: Icon(
+                                Icons.arrow_downward_outlined,
+                                size: 40,
+                                color: Colors.black,
+                              ),
+                            ),
+                            builder: (context, child) => Transform.rotate(
+                              angle: animation.value,
+                            ),
+                          )),
+                      Icon(
+                        Icons.arrow_downward_outlined,
+                        size: 40,
+                        color: Colors.black,
+                      ),
+                    ],
+                  ),
+                )),
+            //1
+            Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 50, top: 50),
+                  child: AnimatedCrossFade(
+                      firstChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick1.value == true) {
+                            controller.efeitoclick1.value = false;
+                          } else {
+                            controller.efeitoclick1.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 100,
+                          color: Colors.red,
+                        ),
+                      ),
+                      secondChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick1.value == true) {
+                            controller.efeitoclick1.value = false;
+                          } else {
+                            controller.efeitoclick1.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 500,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      crossFadeState: controller.efeitoclick1.value
+                          ? CrossFadeState.showFirst
+                          : CrossFadeState.showSecond,
+                      duration: Duration(milliseconds: 500)),
+                )),
+            //2
+            Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 50, top: 50),
+                  child: AnimatedCrossFade(
+                      firstChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick2.value == true) {
+                            controller.efeitoclick2.value = false;
+                          } else {
+                            controller.efeitoclick2.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 100,
+                          color: Colors.red,
+                        ),
+                      ),
+                      secondChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick2.value == true) {
+                            controller.efeitoclick2.value = false;
+                          } else {
+                            controller.efeitoclick2.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 500,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      crossFadeState: controller.efeitoclick2.value
+                          ? CrossFadeState.showFirst
+                          : CrossFadeState.showSecond,
+                      duration: Duration(milliseconds: 500)),
+                )),
+            //3
+            Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 50, top: 50),
+                  child: AnimatedCrossFade(
+                      firstChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick3.value == true) {
+                            controller.efeitoclick3.value = false;
+                          } else {
+                            controller.efeitoclick3.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 100,
+                          color: Colors.red,
+                        ),
+                      ),
+                      secondChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick3.value == true) {
+                            controller.efeitoclick3.value = false;
+                          } else {
+                            controller.efeitoclick3.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 500,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      crossFadeState: controller.efeitoclick3.value
+                          ? CrossFadeState.showFirst
+                          : CrossFadeState.showSecond,
+                      duration: Duration(milliseconds: 500)),
+                )),
+            //4
+            Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 50, top: 50),
+                  child: AnimatedCrossFade(
+                      firstChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick4.value == true) {
+                            controller.efeitoclick4.value = false;
+                          } else {
+                            controller.efeitoclick4.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 100,
+                          color: Colors.red,
+                        ),
+                      ),
+                      secondChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick4.value == true) {
+                            controller.efeitoclick4.value = false;
+                          } else {
+                            controller.efeitoclick4.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 500,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      crossFadeState: controller.efeitoclick4.value
+                          ? CrossFadeState.showFirst
+                          : CrossFadeState.showSecond,
+                      duration: Duration(milliseconds: 500)),
+                )),
+            //
+            Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 50, top: 50),
+                  child: AnimatedCrossFade(
+                      firstChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick5.value == true) {
+                            controller.efeitoclick5.value = false;
+                          } else {
+                            controller.efeitoclick5.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 100,
+                          color: Colors.red,
+                        ),
+                      ),
+                      secondChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick5.value == true) {
+                            controller.efeitoclick5.value = false;
+                          } else {
+                            controller.efeitoclick5.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 500,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      crossFadeState: controller.efeitoclick5.value
+                          ? CrossFadeState.showFirst
+                          : CrossFadeState.showSecond,
+                      duration: Duration(milliseconds: 500)),
+                )),
+            //6
+            Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 50, top: 50),
+                  child: AnimatedCrossFade(
+                      firstChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick6.value == true) {
+                            controller.efeitoclick6.value = false;
+                          } else {
+                            controller.efeitoclick6.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 100,
+                          color: Colors.red,
+                        ),
+                      ),
+                      secondChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick6.value == true) {
+                            controller.efeitoclick6.value = false;
+                          } else {
+                            controller.efeitoclick6.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 500,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      crossFadeState: controller.efeitoclick6.value
+                          ? CrossFadeState.showFirst
+                          : CrossFadeState.showSecond,
+                      duration: Duration(milliseconds: 500)),
+                )),
+            //7
+            Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 50, top: 50),
+                  child: AnimatedCrossFade(
+                      firstChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick7.value == true) {
+                            controller.efeitoclick7.value = false;
+                          } else {
+                            controller.efeitoclick7.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 100,
+                          color: Colors.red,
+                        ),
+                      ),
+                      secondChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick7.value == true) {
+                            controller.efeitoclick7.value = false;
+                          } else {
+                            controller.efeitoclick7.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 500,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      crossFadeState: controller.efeitoclick7.value
+                          ? CrossFadeState.showFirst
+                          : CrossFadeState.showSecond,
+                      duration: Duration(milliseconds: 500)),
+                )),
+            //8
+            Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 50, top: 50),
+                  child: AnimatedCrossFade(
+                      firstChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick8.value == true) {
+                            controller.efeitoclick8.value = false;
+                          } else {
+                            controller.efeitoclick8.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 100,
+                          color: Colors.red,
+                        ),
+                      ),
+                      secondChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick8.value == true) {
+                            controller.efeitoclick8.value = false;
+                          } else {
+                            controller.efeitoclick8.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 500,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      crossFadeState: controller.efeitoclick8.value
+                          ? CrossFadeState.showFirst
+                          : CrossFadeState.showSecond,
+                      duration: Duration(milliseconds: 500)),
+                )),
+            //9
+            Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 50, top: 50),
+                  child: AnimatedCrossFade(
+                      firstChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick9.value == true) {
+                            controller.efeitoclick9.value = false;
+                          } else {
+                            controller.efeitoclick9.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 100,
+                          color: Colors.red,
+                        ),
+                      ),
+                      secondChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick9.value == true) {
+                            controller.efeitoclick9.value = false;
+                          } else {
+                            controller.efeitoclick9.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 500,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      crossFadeState: controller.efeitoclick9.value
+                          ? CrossFadeState.showFirst
+                          : CrossFadeState.showSecond,
+                      duration: Duration(milliseconds: 500)),
+                )),
+            //10
+            Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 50, top: 50),
+                  child: AnimatedCrossFade(
+                      firstChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick10.value == true) {
+                            controller.efeitoclick10.value = false;
+                          } else {
+                            controller.efeitoclick10.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 100,
+                          color: Colors.red,
+                        ),
+                      ),
+                      secondChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick10.value == true) {
+                            controller.efeitoclick10.value = false;
+                          } else {
+                            controller.efeitoclick10.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 500,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      crossFadeState: controller.efeitoclick10.value
+                          ? CrossFadeState.showFirst
+                          : CrossFadeState.showSecond,
+                      duration: Duration(milliseconds: 500)),
+                )),
+            //11
+            Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 50, top: 50),
+                  child: AnimatedCrossFade(
+                      firstChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick11.value == true) {
+                            controller.efeitoclick11.value = false;
+                          } else {
+                            controller.efeitoclick11.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 100,
+                          color: Colors.red,
+                        ),
+                      ),
+                      secondChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick11.value == true) {
+                            controller.efeitoclick11.value = false;
+                          } else {
+                            controller.efeitoclick11.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 500,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      crossFadeState: controller.efeitoclick11.value
+                          ? CrossFadeState.showFirst
+                          : CrossFadeState.showSecond,
+                      duration: Duration(milliseconds: 500)),
+                )),
+            //12
+            Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 50, top: 50),
+                  child: AnimatedCrossFade(
+                      firstChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick12.value == true) {
+                            controller.efeitoclick12.value = false;
+                          } else {
+                            controller.efeitoclick12.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 100,
+                          color: Colors.red,
+                        ),
+                      ),
+                      secondChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick12.value == true) {
+                            controller.efeitoclick12.value = false;
+                          } else {
+                            controller.efeitoclick12.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 500,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      crossFadeState: controller.efeitoclick12.value
+                          ? CrossFadeState.showFirst
+                          : CrossFadeState.showSecond,
+                      duration: Duration(milliseconds: 500)),
+                )),
+            //13
+            Obx(() => Padding(
+                  padding: const EdgeInsets.only(left: 50, top: 50),
+                  child: AnimatedCrossFade(
+                      firstChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick13.value == true) {
+                            controller.efeitoclick13.value = false;
+                          } else {
+                            controller.efeitoclick13.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 100,
+                          color: Colors.red,
+                        ),
+                      ),
+                      secondChild: GestureDetector(
+                        onTap: () {
+                          if (controller.efeitoclick13.value == true) {
+                            controller.efeitoclick13.value = false;
+                          } else {
+                            controller.efeitoclick13.value = true;
+                          }
+                        },
+                        child: Container(
+                          width: 350,
+                          height: 500,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      crossFadeState: controller.efeitoclick13.value
+                          ? CrossFadeState.showFirst
+                          : CrossFadeState.showSecond,
+                      duration: Duration(milliseconds: 500)),
+                )),
           ],
         ),
       ),
